@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Notification icon -->
+    <item
+        android:id="@+id/action_notification"
+        android:icon="@drawable/sl_users_group_two_rounded"
+        android:title="Notifications"
+        app:showAsAction="always"
+        android:tint="@android:color/black" />
+
+    <!-- Profile icon -->
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/sl_share"
+        android:title="Profile"
+        app:showAsAction="always"
+        android:tint="@android:color/black" />
+</menu>

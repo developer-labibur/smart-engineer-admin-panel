@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/navLibrary"
+            android:icon="@drawable/course_assign_24"
+            android:title="Smart Library" />
+
+        <item
+            android:id="@+id/navRecent"
+            android:icon="@drawable/most_recent_24"
+            android:title="Recent Updates" />
+
+        <item
+            android:id="@+id/navBookmark"
+            android:icon="@drawable/bookmark_48"
+            android:title="Bookmark" />
+
+        <item
+            android:id="@+id/navDownload"
+            android:icon="@drawable/download_48"
+            android:title="Download List" />
+
+        <item
+            android:id="@+id/navSetting"
+            android:icon="@drawable/setting_48"
+            android:title="Setting" />
+    </group>
+
+    <item android:title="Help and Policy">
+        <menu>
+            <group android:checkableBehavior="none">
+
+                <item
+                    android:id="@+id/navAbout"
+                    android:icon="@drawable/about_me_48"
+                    android:title="About Us" />
+
+                <item
+                    android:id="@+id/navContact"
+                    android:icon="@drawable/contact_48"
+                    android:title="Contact Us" />
+
+                <item
+                    android:id="@+id/navDeveloper"
+                    android:icon="@drawable/software_engineering_68"
+                    android:title="Developer Info" />
+
+                <item
+                    android:id="@+id/navTerms"
+                    android:icon="@drawable/terms_and_conditions_48"
+                    android:title="Terms of Conditions" />
+
+                <item
+                    android:id="@+id/navPrivacy"
+                    android:icon="@drawable/law_48"
+                    android:title="Privacy Policy" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

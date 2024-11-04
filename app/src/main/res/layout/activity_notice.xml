@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".NoticeActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNotice"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_notice" />
+
+    <View
+        android:id="@+id/bgFAB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fab_background"
+        android:visibility="gone" />
+
+    <!-- Floating Action Button -->
+    <!-- parent FAB -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/add_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blue_fab_bg_color"
+        android:gravity="end"
+        app:icon="@drawable/menu_vertical_24"
+        app:iconSize="35dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FAB for add Dead -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addDeadFab"
+        android:backgroundTint="@color/purple_light_color"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/sl_users_group_two_rounded"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/add_fab"
+        app:layout_constraintEnd_toEndOf="@+id/add_fab"
+        style="@style/fab_btn" />
+    <!-- text for FAB for add Dead -->
+    <TextView
+        android:id="@+id/add_dead_text"
+        android:text="@string/dead"
+        app:layout_constraintBottom_toBottomOf="@+id/addDeadFab"
+        app:layout_constraintEnd_toStartOf="@+id/addDeadFab"
+        app:layout_constraintTop_toTopOf="@+id/addDeadFab"
+        android:visibility="invisible"
+        style="@style/fab_text" />
+
+    <!-- FAB for add Hollyday -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addHollyDayFab"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/sl_calendar"
+        android:backgroundTint="@color/indian_red_light_color"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addDeadFab"
+        app:layout_constraintEnd_toEndOf="@+id/addDeadFab"
+        style="@style/fab_btn"/>
+    <!-- text for FAB for add Hollyday -->
+    <TextView
+        android:id="@+id/add_hollyday_text"
+        android:text="@string/hollyday"
+        app:layout_constraintBottom_toBottomOf="@+id/addHollyDayFab"
+        app:layout_constraintEnd_toStartOf="@+id/addHollyDayFab"
+        app:layout_constraintTop_toTopOf="@+id/addHollyDayFab"
+        android:visibility="invisible"
+        style="@style/fab_text"/>
+
+    <!-- FAB for add News -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNewsFab"
+        android:backgroundTint="@color/yellow_light_color"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/sl_academic_cap"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addHollyDayFab"
+        app:layout_constraintEnd_toEndOf="@+id/addHollyDayFab"
+        style="@style/fab_btn"/>
+    <!-- text for FAB for add News -->
+    <TextView
+        android:id="@+id/add_news_text"
+        android:text="@string/news"
+        app:layout_constraintBottom_toBottomOf="@+id/addNewsFab"
+        app:layout_constraintEnd_toStartOf="@+id/addNewsFab"
+        app:layout_constraintTop_toTopOf="@+id/addNewsFab"
+        android:visibility="invisible"
+        style="@style/fab_text"/>
+
+    <!-- FAB for add Notice -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNoticeFab"
+        android:backgroundTint="@color/blue_light_color"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/sl_diploma"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addNewsFab"
+        app:layout_constraintEnd_toEndOf="@+id/addNewsFab"
+        style="@style/fab_btn"/>
+    <!-- text for FAB for add Notice -->
+    <TextView
+        android:id="@+id/add_notice_text"
+        android:text="@string/notice"
+        app:layout_constraintBottom_toBottomOf="@+id/addNoticeFab"
+        app:layout_constraintEnd_toStartOf="@+id/addNoticeFab"
+        app:layout_constraintTop_toTopOf="@+id/addNoticeFab"
+        android:visibility="invisible"
+        style="@style/fab_text"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

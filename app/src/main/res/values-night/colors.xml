@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ================================================================================================== -->
+    <!--  TODO:                                  CUSTOM COLOR => DARK                                       -->
+    <!-- ================================================================================================== -->
+
+    <!-- Login or Signup Button -->
+    <color name="googleContinue__Bg">#000000</color>
+    <color name="googleContinue__Text">#D3D3D3</color>
+    <color name="BtnGradientBlue__Dark">#6585fd</color>
+    <color name="BtnGradientBlue__Light">#42d4e6</color>
+
+    <!-- Left Side Bar Color -->
+    <color name="sideBar_Bg">#656565</color>
+    <color name="sideBar_ActiveBtnBg">#242424</color>
+    <color name="sideBar_ActiveBtn">#FFFFFFFF</color>
+    <color name="sideBar_InactiveBtn">#A8A8A8</color>
+    <color name="sideBar_iconTint">#FBBC04</color>
+
+    <!-- Main Container_bg Color -->
+    <color name="mainContainer_Bg">#242424</color>
+    <color name="mainContainer_Active">#242424</color>
+    <color name="mainContainer_HeadingText">#F6F6F6</color>
+    <color name="mainContainer_SubHeadingText">#E1E1E1</color>
+
+    <!-- For Unique Style -->
+    <color name="underlineText">#80622A</color>
+    <color name="ic_light">#D5DDFA</color>
+
+    <!-- Bottom Nav Bar color -->
+    <color name="bottom_nav_bg">#1B1B1B</color>
+
+    <color name="home">#00D8FF</color>
+    <color name="book">#ABB3FF</color>
+    <color name="video">#FFBD26</color>
+    <color name="explore">#FF00B2</color>
+    <color name="profile">#976FFF</color>
+
+    <color name="home_20">#3300D8FF</color>
+    <color name="book_20">#33ABB3FF</color>
+    <color name="video_20">#33FFBD26</color>
+    <color name="explore_20">#33FF00B2</color>
+    <color name="profile_20">#33976FFF</color>
+
+    <!-- Purple ~ Modern => Explore -->
+    <color name="purple_text_color">#7E4EFB</color>
+    <color name="purple_fill_color">#B77E4EFB</color>
+    <color name="purple_bg_color">#33976FFF</color>
+
+    <color name="green_main_love_color">#429471</color>
+    <color name="green_main_loved_color">#FFC0C0</color>
+
+</resources>
