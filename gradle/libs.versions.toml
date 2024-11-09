@@ -1,5 +1,7 @@
 [versions]
 agp = "8.7.2"
+core = "3.3.0"
+input = "3.3.0"
 kotlin = "1.9.24"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -17,13 +19,16 @@ preference = "1.2.1"
 credentialsPlayServicesAuth = "1.5.0-beta01"
 googleid = "1.1.1"
 firebaseBom = "33.5.1"
-firebaseAuth = "23.1.0"
 glide = "4.16.0"
 circleimageview = "3.1.0"
+neumorphism = "0.2.1"
+imageSlideshow = "0.1.0"
+
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+input = { module = "com.afollestad.material-dialogs:input", version.ref = "input" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -47,10 +52,16 @@ androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fr
 androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navVersion" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navVersion" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
-firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 circleimageview = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleimageview" }
+material-dialogs-core = { module = "com.afollestad.material-dialogs:core", version.ref = "core" }
+neumorphism = { group = "com.github.fornewid", name = "neumorphism", version.ref = "neumorphism" }
+imageSlideshow = { group = "com.github.denzcoskun", name = "ImageSlideshow", version.ref = "imageSlideshow" }
+
+
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

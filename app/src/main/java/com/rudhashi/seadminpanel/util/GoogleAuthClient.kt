@@ -12,7 +12,6 @@ import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.rudhashi.seadminpanel.Users
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.tasks.await
 
@@ -31,21 +30,20 @@ class GoogleAuthClient(
         return false
     }
 
-    suspend fun signIn(googleSignIn: Boolean): Boolean{
-        if (isSignedIn()){
+    suspend fun signIn(googleSignIn: Boolean): Boolean {
+        if (isSignedIn()) {
             return true
         }
 
         try {
-            val result = buildCredentialRequest(googleSignIn)
+            val result = buildCredentialRequest(googleSignIn) ?: return false
             return handleSignIn(result)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
             if (e is CancellationException) throw e
-            println("$tag => SignIn error: ${e.message}")
+            Log.e(tag, "SignIn error: ${e.message}")
             return false
         }
-
     }
 
     suspend fun signOut(){
@@ -92,7 +90,7 @@ class GoogleAuthClient(
                 GetGoogleIdOption.Builder()
                     .setFilterByAuthorizedAccounts(googleSignIn)
                     .setServerClientId(SmartData.WEB_CLIENT_ID)
-                    .setAutoSelectEnabled(false)
+                    .setAutoSelectEnabled(false) // Change if needed
                     .build()
             )
             .build()

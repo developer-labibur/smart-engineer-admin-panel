@@ -15,16 +15,35 @@
         android:theme="@style/Theme.SEAdminPanel"
         tools:targetApi="31">
         <activity
+            android:name=".ui.AddNewPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.BookDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AllBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AllUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".view.EditorActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.DashboardActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".NoticeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".view.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -117,4 +117,14 @@
         <item name="android:layout_marginBottom">24dp</item>
         <item name="android:visibility">invisible</item>
     </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Make status bar transparent -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Optional: Add this to make the content extend behind the status bar -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!-- Optional: Set light status bar icons for better visibility on dark backgrounds -->
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
 </resources>

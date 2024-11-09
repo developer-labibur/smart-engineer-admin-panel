@@ -37,6 +37,7 @@ class NoticeActivity : AppCompatActivity() {
     private lateinit var adapter: NoticeAdapter // Replace with your RecyclerView adapter
     private var listenerRegistration: ListenerRegistration? = null
 
+
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -30,7 +30,7 @@ class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
-
+    private var tag = "SplashScreenActivity"
     private lateinit var sharedPreferences: SharedPreferences
     private var isNightMode: Boolean? = null
 
@@ -52,9 +52,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         // Get the current theme mode
         isNightMode = sharedPreferences.getBoolean(SmartData.SWITCH_BUTTON_KEY, false)
-        if (isNightMode as Boolean) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
+        if (isNightMode as Boolean) { AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) }
 
         val upFromBottom = AnimationUtils.loadAnimation(this, R.anim.animation1)
 
@@ -63,50 +61,40 @@ class SplashScreenActivity : AppCompatActivity() {
         // Delay the splash screen for 3 seconds, then move to AllUserActivity
         Handler(Looper.getMainLooper()).postDelayed({
             // Check if user is already logged in and move to AllUserActivity if true, otherwise move to VerificationActivity
+
             if (auth.currentUser != null) {
+                startActivity(Intent(this, DashboardActivity::class.java))
+
                 // Start the Dashboard activity
-                database.reference.child("Users")
+                /*database.reference.child("Users")
                     .child(auth.currentUser!!.uid)
                     .addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
                             val user: Users? = snapshot.getValue(Users::class.java)
-                            val role = user?.role.toString()
-                            try {
-                                when (role) {
-                                    "Main Admin" -> {
-                                        startActivity(Intent(this@SplashScreenActivity, DashboardActivity::class.java))
-                                        finish()
-                                    }
-                                    "Admin" -> {
-                                        startActivity(Intent(this@SplashScreenActivity, DashboardActivity::class.java))
-                                        finish()
-                                    }
-                                    else -> {
-                                        startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
-                                        finish()
-                                        auth.signOut()
-                                    }
-                                }
-                            } catch (e: Exception){
+                            if (SmartData.checkAdministrator(user)){
+                                startActivity(Intent(this@SplashScreenActivity, DashboardActivity::class.java))
+                                finish()
+                            } else {
                                 auth.signOut()
                                 startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+                                Toast.makeText(this@SplashScreenActivity, "Something went wrong...", Toast.LENGTH_LONG).show()
                                 finish()
                             }
                         }
+
                         override fun onCancelled(error: DatabaseError) {
-                            auth.signOut()
                             startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
                             finish()
                         }
-                    })
-        } else {
-            // New User => Start the Main activity
-            startActivity(Intent(this, MainActivity::class.java))
-                auth.signOut()
-        }
-        // Close this activity
-        finish()
-    }, SmartData.SPLASH_SCREEN) // 2 seconds delay
+                    })*/
+            } else {
+                // New User => Start the Main activity
+                startActivity(Intent(this, MainActivity::class.java))
+                Log.d(tag, "User is not logged in")
+            }
+            // Close this activity
+            finish()
+        }, SmartData.SPLASH_SCREEN) // 2 seconds delay
 
-}
+    }
 }

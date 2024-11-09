@@ -76,5 +76,11 @@ dependencies {
 
     implementation (libs.glide) // Image from Glide
     implementation (libs.circleimageview)  // CircleImageView
+    implementation (libs.neumorphism)  // 3D CardView, Button etc.
+    implementation (libs.imageSlideshow) // Image Slider Library
+
+    implementation (libs.material.dialogs.core)
+    implementation (libs.input)
+
 
 }

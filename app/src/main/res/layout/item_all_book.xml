@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clickNoticeItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="13dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/bg_book_item">
+
+
+    <LinearLayout
+        android:id="@+id/ll_itemBG"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_book_item_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/bookImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/smart_engineer_logo"
+            android:padding="8dp"
+            android:src="@drawable/software_engineering_68" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/main_font_regular_2"
+        android:text="Programming in Java"
+        android:layout_marginStart="16dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/mainContainer_HeadingText"
+        app:layout_constraintStart_toEndOf="@+id/ll_itemBG"
+        app:layout_constraintTop_toTopOf="@+id/ll_itemBG" />
+
+    <TextView
+        android:id="@+id/bookCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/main_font_regular_2"
+        android:text="21011"
+        android:textColor="@color/mainContainer_SubHeadingText"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuImageView"
+        app:layout_constraintEnd_toStartOf="@+id/menuImageView"
+        app:layout_constraintTop_toTopOf="@+id/menuImageView" />
+
+    <ImageView
+        android:id="@+id/menuImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/sl_icon"
+        android:src="@drawable/sl_heart_not_fill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ll_itemBG"/>
+
+    <ImageView
+        android:id="@+id/icLove"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="6dp"
+        android:contentDescription="@string/sl_icon"
+        android:src="@drawable/sl_heart"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_itemBG"
+        app:layout_constraintStart_toEndOf="@+id/ll_itemBG" />
+
+    <TextView
+        android:id="@+id/bookViewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/main_font_regular_2"
+        android:text="254"
+        android:textColor="@color/mainContainer_HeadingText"
+        android:textSize="13sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/icLove"
+        app:layout_constraintStart_toEndOf="@+id/icLove"
+        app:layout_constraintTop_toTopOf="@+id/icLove" />
+
+    <LinearLayout
+        android:id="@+id/btnLoved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:visibility="visible"
+        android:paddingEnd="8dp"
+        android:background="@drawable/bg_book_item_picture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/btnTextLoved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/main_font_regular_2"
+            android:text="Read Now"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/icLove"
+            app:layout_constraintStart_toEndOf="@+id/icLove"
+            app:layout_constraintTop_toTopOf="@+id/icLove" />
+
+        <ImageView
+            android:id="@+id/btnIconLoved"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/smart_engineer_logo"
+            android:src="@drawable/about_me_48" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
