@@ -1,10 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#181d3d"
     tools:context=".view.MainActivity2">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clHeader"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
+                android:background="@color/mainContainer_Bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_book_ber_bottom_left_radius"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/circle_shadow_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/btnBack"
+                        style="@style/sl_header_button"
+                        android:contentDescription="@string/sl_icon"
+                        android:src="@drawable/back" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvBookTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/main_font_regular_2"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/book_name"
+                    android:textColor="@color/mainContainer_HeadingText"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/btnShare"
+                    app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/btnShare"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/circle_shadow_icon"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        style="@style/sl_header_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="2dp"
+                        android:contentDescription="@string/sl_icon"
+                        android:padding="8dp"
+                        android:src="@drawable/share" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/bookCoverImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/book_cover"
+                    android:src="@drawable/accounting"
+                    app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                <ImageView
+                    android:id="@+id/icBook"
+                    style="@style/sl_header_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:contentDescription="@string/sl_icon"
+                    android:src="@drawable/sl_notebook"
+                    app:layout_constraintStart_toEndOf="@+id/bookCoverImage"
+                    app:layout_constraintTop_toTopOf="@+id/bookCoverImage" />
+
+                <TextView
+                    android:id="@+id/bookCodes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subject_code"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/icBook"
+                    app:layout_constraintStart_toEndOf="@+id/icBook"
+                    app:layout_constraintTop_toTopOf="@+id/icBook"
+                    app:layout_constraintVertical_bias="0.36" />
+
+                <ImageView
+                    android:id="@+id/icView"
+                    style="@style/sl_header_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/sl_icon"
+                    android:src="@drawable/sl_eye"
+                    app:layout_constraintStart_toEndOf="@+id/bookCoverImage"
+                    app:layout_constraintTop_toBottomOf="@+id/icBook" />
+
+                <TextView
+                    android:id="@+id/viewCountTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_reads"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/icView"
+                    app:layout_constraintStart_toEndOf="@+id/icView"
+                    app:layout_constraintTop_toTopOf="@+id/icView"
+                    app:layout_constraintVertical_bias="0.36" />
+
+                <ImageView
+                    android:id="@+id/icCalander"
+                    style="@style/sl_header_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/sl_icon"
+                    android:src="@drawable/sl_calendar"
+                    app:layout_constraintStart_toEndOf="@+id/bookCoverImage"
+                    app:layout_constraintTop_toBottomOf="@+id/icView" />
+
+                <TextView
+                    android:id="@+id/dataUploaded"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_birthday"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/icCalander"
+                    app:layout_constraintStart_toEndOf="@+id/icCalander"
+                    app:layout_constraintTop_toTopOf="@+id/icCalander"
+                    app:layout_constraintVertical_bias="0.45" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_book_ber_top_right_radius"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginBottom="-10dp"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/main_font_regular_2"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/units"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/sl_notebook_bookmark_unit_fill"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    app:cardBackgroundColor="#2d325a"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/bookTotalUnits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/main_font_regular_2"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/_07"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- RecyclerView for Units -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/unitRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clHeader"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_book_unit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

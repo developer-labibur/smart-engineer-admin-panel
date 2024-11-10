@@ -82,5 +82,6 @@ dependencies {
     implementation (libs.material.dialogs.core)
     implementation (libs.input)
 
-
+    // Shimmer Effect for Facebook
+    implementation(libs.shimmer)
 }

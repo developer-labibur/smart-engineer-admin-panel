@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.rudhashi.seadminpanel.databinding.ItemBookUnitBinding
 import com.rudhashi.seadminpanel.model.BookUnit
@@ -18,8 +19,7 @@ class UnitAdapter(
 
     inner class UnitViewHolder(binding: ItemBookUnitBinding) : RecyclerView.ViewHolder(binding.root) {
         val unitName: TextView = binding.unitName
-        val unitNumber: TextView = binding.unitNumber
-        val viewPdfButton: Button = binding.viewPdfButton
+        val viewPdfButton: ConstraintLayout = binding.clickUnitItem
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UnitViewHolder {
@@ -31,7 +31,6 @@ class UnitAdapter(
         val unit = bookUnitList[position]
 
         holder.unitName.text = unit.UName
-        holder.unitNumber.text = "BookUnit No: ${unit.UNo}"
 
         // Open PDF link when the button is clicked
         holder.viewPdfButton.setOnClickListener {

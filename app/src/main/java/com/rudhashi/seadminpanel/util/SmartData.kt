@@ -45,8 +45,32 @@ class SmartData {
             }
         }
 
-        fun getDepartmentName(depCode: String): String {
-            return when (depCode) {
+        fun dpToPx(context: Context, dp: Float): Int {
+            val density = context.resources.displayMetrics.density
+            return (dp * density).toInt()
+        }
+
+        fun getDepartmentName(code: Any): String {
+            val codeStr = code.toString()  // Convert any type to string for matching
+            return codeStr
+        }
+        fun covertDepNameToCode(name: Any): String {
+            val codeStr = name.toString()  // Convert any type to string for matching
+            return when (codeStr) {
+                "61 => Architecture Technology" -> "61"
+                "64 => Civil Technology" -> "64"
+                "85 => Computer Science and Technology" -> "85"
+                "68 => Electrical Technology" -> "68"
+                "68 => Electronics Technology" -> "68"
+                "70 => Mechanical Technology" -> "70"
+                "88 => Construction Technology" -> "88"
+                "71 => Power Technology" -> "71"
+                else -> ""
+            }
+        }
+        fun covertDepCodeToName(code: Any): String {
+            val codeStr = code.toString()  // Convert any type to string for matching
+            return when (codeStr) {
                 "61" -> "Architecture Technology"
                 "64" -> "Civil Technology"
                 "85" -> "Computer Science and Technology"

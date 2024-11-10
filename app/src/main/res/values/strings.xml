@@ -163,5 +163,20 @@
     <string name="selected_none">Selected: None</string>
     <string name="select_semesters">Select Semesters</string>
     <string name="post">Post</string>
+    <string name="all_book_list">All Book List</string>
+    <string name="add_book">Add Book</string>
+    <string name="create_a_new_book">Create a new book</string>
+    <string name="all_books">All Books</string>
+    <string name="_21011">21011</string>
+    <string name="_254">254</string>
+    <string name="read_now">Read Now</string>
+    <string name="total_reads">Total Reads</string>
+    <string name="_07">07</string>
+    <string name="units">Units</string>
+    <string name="unit_0_unit_name">Unit 0: Unit Name</string>
+    <string name="department">Department</string>
+    <string name="tag">Tags</string>
+    <string name="edit_book_details">Edit Book Details</string>
+    <string name="add_new_unit">Add New Unit</string>
 
 </resources>

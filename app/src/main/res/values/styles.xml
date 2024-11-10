@@ -127,4 +127,12 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="sl_header_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:contentDescription">@string/sl_icon</item>
+        <item name="android:padding">7dp</item>
+    </style>
+
 </resources>

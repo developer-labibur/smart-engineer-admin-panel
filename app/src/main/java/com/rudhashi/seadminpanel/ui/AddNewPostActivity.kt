@@ -12,6 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.rudhashi.seadminpanel.databinding.ActivityAddNewPostBinding
 import com.rudhashi.seadminpanel.model.Department
 import com.rudhashi.seadminpanel.util.MakeFirebaseEasy
+import com.rudhashi.seadminpanel.util.SmartData
 
 class AddNewPostActivity : AppCompatActivity() {
 
@@ -37,16 +38,27 @@ class AddNewPostActivity : AppCompatActivity() {
     }
 
     @SuppressLint("CheckResult", "SetTextI18n")
-    private fun setupDepartmentSelection(dep: ArrayList<String>) {
-        val departments: List<String> = dep
+    private fun setupDepartmentSelection(department: ArrayList<String>) {
+        val departments: List<String> = department
+
+//        val departmentName = department
+//        val departmentCode = departmentName.map { code ->
+//            SmartData.covertDepNameToCode(code)
+//        }
 
         binding.departmentSelectButton.setOnClickListener {
             MaterialDialog(this).show {
                 title(text = "Select Departments")
 
                 listItemsMultiChoice(items = departments) { _, _, items ->
+
+                    val departmentCode = items.map {
+                        SmartData.covertDepNameToCode(it.toString())
+                    }
+
                     selectedDepartments.clear()
-                    selectedDepartments.addAll(items.map { it.toString() })
+                    selectedDepartments.addAll(departmentCode)
+                    //selectedDepartments.addAll(items.map { it.toString() })
                     binding.selectedDepartmentsText.text = "Selected: ${selectedDepartments.joinToString(", ")}"
                 }
                 positiveButton(text = "OK")

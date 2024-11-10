@@ -12,8 +12,11 @@ class MakeFirebaseEasy {
             FirebaseFirestore.getInstance().collection ("departments").get()
                 .addOnSuccessListener { documents ->
                     for (document in documents) {
-                        val department = document.toObject(Department::class.java)
-                        allDepartment.add(department.DName)
+                        val xDep = document.toObject(Department::class.java)
+                        val dName = xDep.DName
+                        val dCode = xDep.DCode
+                        val department = "$dCode => $dName"
+                        allDepartment.add(department)
                     }
                 }
                 .addOnFailureListener { exception ->

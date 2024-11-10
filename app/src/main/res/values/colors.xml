@@ -27,6 +27,7 @@
     <color name="underlineText">#E3F30D</color>
     <color name="ic_light">#1C274C</color>
     <color name="slider_title_background">#40000000</color>
+    <color name="shimmer">#C2C2C2</color>
 
     <!-- Bottom Nav Bar color -->
     <color name="bottom_nav_bg">#FFFFFFFF</color>
