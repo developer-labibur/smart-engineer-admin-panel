@@ -11,6 +11,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.rudhashi.seadminpanel.databinding.ActivityAddNewPostBinding
 import com.rudhashi.seadminpanel.model.Department
+import com.rudhashi.seadminpanel.util.ConvertFB
 import com.rudhashi.seadminpanel.util.MakeFirebaseEasy
 import com.rudhashi.seadminpanel.util.SmartData
 
@@ -53,7 +54,7 @@ class AddNewPostActivity : AppCompatActivity() {
                 listItemsMultiChoice(items = departments) { _, _, items ->
 
                     val departmentCode = items.map {
-                        SmartData.covertDepNameToCode(it.toString())
+                        ConvertFB.covertDepNameToCode(it.toString())
                     }
 
                     selectedDepartments.clear()
@@ -75,8 +76,11 @@ class AddNewPostActivity : AppCompatActivity() {
             MaterialDialog(this).show {
                 title(text = "Select Semesters")
                 listItemsMultiChoice(items = semesters) { _, _, items ->
+                    val semesterTag = items.map {
+                        ConvertFB.covertSemNameToTag(it.toString())
+                    }
                     selectedSemesters.clear()
-                    selectedSemesters.addAll(items.map { it.toString() })
+                    selectedSemesters.addAll(semesterTag)
                     binding.selectedSemestersText.text = "Selected: ${selectedSemesters.joinToString(", ")}"
                 }
                 positiveButton(text = "OK")
@@ -109,7 +113,6 @@ class AddNewPostActivity : AppCompatActivity() {
         )
 
         // Upload data to Firestore
-        val db = FirebaseFirestore.getInstance()
         db.collection("books").document(bookCode).set(bookData)
             .addOnSuccessListener {
                 Toast.makeText(this, "Book added successfully", Toast.LENGTH_LONG).show()
